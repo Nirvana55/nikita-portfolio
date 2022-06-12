@@ -9,7 +9,6 @@ import Twitter from './twitter.svg'
 
 const components = {
   mail: Mail,
-  github: Github,
   facebook: Facebook,
   youtube: Youtube,
   linkedin: Linkedin,
