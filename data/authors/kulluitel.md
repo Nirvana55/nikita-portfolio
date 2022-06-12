@@ -1,5 +1,5 @@
 ---
-name: Kul B Luitel
+name: Prof. Kul B Luitel
 avatar: /static/images/avatar.png
 occupation: Professor of Economics
 company: Cardiff Business School
