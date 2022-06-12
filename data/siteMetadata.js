@@ -1,7 +1,7 @@
 const siteMetadata = {
-  title: 'Kul Luitel Portfolio',
-  author: 'Kul Luitel',
-  headerTitle: 'Kul Luitel',
+  title: 'Prof. Kul B Luitel',
+  author: 'Prof. Kul B Luitel',
+  headerTitle: 'Kul B Luitel',
   description: 'A blog created with Next.js and Tailwind.css',
   language: 'en-us',
   theme: 'system', // system, dark or light
