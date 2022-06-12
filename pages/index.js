@@ -4,6 +4,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
+import Card from '@/components/Card'
 
 import NewsletterForm from '@/components/NewsletterForm'
 
@@ -20,13 +21,35 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="relative pb-12 pt-2 text-center sm:pb-14 sm:pt-3">
+          <h1 className="py-3 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14 xl:text-6xl">
+            Hi, <span className="animate-fade-text">I'm</span> &nbsp;
+            <span>Kul</span> <span>B.</span> <span className="animate-fade-text">Luitel</span>
+          </h1>
+          <p className="px-2 text-xl font-light leading-6 text-gray-500 dark:text-gray-400 sm:px-6 xl:px-0">
+            mini-bio
+          </p>
+        </div>
+        <div>
+          <div className="flex w-full flex-wrap pb-2">
+            <Card
+              title="Learning"
+              description="learning:description"
+              href={'/learning'}
+              className="py-4 md:px-4"
+            />
+            <Card
+              title="About"
+              description="About-description"
+              href={'/about'}
+              className="py-4 md:px-4"
+            />
+          </div>
+        </div>
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Latest
+            Recent Posts
           </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
-          </p>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
