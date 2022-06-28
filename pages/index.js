@@ -1,4 +1,5 @@
 import Link from '@/components/Link'
+import Image from 'next/image'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
@@ -8,6 +9,7 @@ import Card from '@/components/Card'
 import { renderCanvas } from '../components/renderCanvas'
 import { ScrollContext } from '../components/scrollObserver'
 import { useRef, useContext, useEffect } from 'react'
+import HomeImg from '../public/static/images/home-image.jpg'
 
 const MAX_DISPLAY = 1
 
@@ -36,6 +38,7 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div>
+        <Image src={HomeImg} alt="Picture of the author" width={300} height={300} />
         <div className="height-canvas not-sr-only relative z-10 flex items-center">
           <div
             ref={ref}
