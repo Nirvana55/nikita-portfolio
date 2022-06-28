@@ -27,3 +27,11 @@ input:-webkit-autofill:focus {
 .height-canvas {
   margin-top: 8rem;
 }
+
+.logo-wrapper {
+  background-color: #2ecbe3;
+  margin-top: 0.3rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}

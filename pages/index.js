@@ -44,7 +44,7 @@ export default function Home({ posts }) {
             src={HomeImg}
             alt="Picture of the author"
             width={250}
-            height={250}
+            height={300}
           />
         </div>
         <div className="height-canvas not-sr-only relative z-10 flex items-center">
