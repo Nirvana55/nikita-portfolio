@@ -25,16 +25,5 @@ input:-webkit-autofill:focus {
 }
 
 .height-canvas {
-  height: 55vh;
-}
-
-@media (max-width: 960px) {
-  .height-canvas {
-    height: 60vh;
-  }
-}
-@media (max-width: 576px) {
-  .height-canvas {
-    height: 90vh;
-  }
+  margin-top: 15rem;
 }

@@ -41,7 +41,7 @@ export default function Home({ posts }) {
             ref={ref}
             className="mx-auto mt-[-120px] flex justify-center md:text-4xl"
             style={{
-              transform: `translateY(${progress * 1000}vh)`,
+              transform: `translateY(${progress * 20}vh)`,
             }}
           >
             <div className="divide-y divide-gray-200 dark:divide-gray-700">
