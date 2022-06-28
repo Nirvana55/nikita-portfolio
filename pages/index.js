@@ -38,7 +38,15 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div>
-        <Image src={HomeImg} alt="Picture of the author" width={300} height={300} />
+        <div className="flex justify-center">
+          <Image
+            className="rounded-3xl"
+            src={HomeImg}
+            alt="Picture of the author"
+            width={250}
+            height={250}
+          />
+        </div>
         <div className="height-canvas not-sr-only relative z-10 flex items-center">
           <div
             ref={ref}
