@@ -1,6 +1,6 @@
 ---
 name: Prof. Kul B Luitel
-avatar: /static/images/avatar.png
+avatar: /static/images/home-image.jpg
 occupation: Professor of Economics
 company: Cardiff Business School
 email: luintelk@cardiff.ac.uk

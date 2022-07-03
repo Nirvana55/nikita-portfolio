@@ -25,16 +25,13 @@ input:-webkit-autofill:focus {
 }
 
 .height-canvas {
-  height: 55vh;
+  margin-top: 8rem;
 }
 
-@media (max-width: 960px) {
-  .height-canvas {
-    height: 60vh;
-  }
-}
-@media (max-width: 576px) {
-  .height-canvas {
-    height: 90vh;
-  }
+.logo-wrapper {
+  background-color: #2ecbe3;
+  margin-top: 0.3rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
 }
