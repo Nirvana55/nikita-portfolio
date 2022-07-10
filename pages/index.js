@@ -71,7 +71,7 @@ export default function Home({ posts }) {
                   <Card
                     title="Articles"
                     description="A place where I share resources that I have been publishing through out the years."
-                    href={'/learning'}
+                    href={'/blog'}
                     className="py-4 md:px-4"
                   />
                   <Card
