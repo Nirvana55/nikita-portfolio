@@ -39,13 +39,13 @@ export default function Home({ posts }) {
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div>
         <div className="flex justify-center">
-          <Image
+          {/* <Image
             className="rounded-3xl"
             src={HomeImg}
             alt="Picture of the author"
             width={250}
             height={300}
-          />
+          /> */}
         </div>
         <div className="height-canvas not-sr-only relative z-10 flex items-center">
           <div
@@ -59,11 +59,10 @@ export default function Home({ posts }) {
               <div className="relative pb-12 pt-2 text-center sm:pb-14 sm:pt-3">
                 <h1 className="py-3 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14 xl:text-6xl">
                   Hi, <span className="animate-fade-text">I'm</span> &nbsp;
-                  <span>Kul</span> <span>Bahadur</span>{' '}
-                  <span className="animate-fade-text">Luitel</span>
+                  <span>Nikhil</span> <span className="animate-fade-text">Lama</span>
                 </h1>
                 <p className="px-2 text-xl font-light leading-6 text-gray-500 dark:text-gray-400 sm:px-6 xl:px-0">
-                  Certified economics professor with hard work and passion.
+                  Programmer & Ethical Hacker.
                 </p>
               </div>
               <div>
