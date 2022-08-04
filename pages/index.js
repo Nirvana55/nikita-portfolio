@@ -5,10 +5,10 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
-import Card from '@/components/Card'
 import { renderCanvas } from '../components/renderCanvas'
 import { ScrollContext } from '../components/scrollObserver'
 import { useRef, useContext, useEffect } from 'react'
+import NewsletterForm from '@/components/NewsletterForm'
 
 const MAX_DISPLAY = 1
 
@@ -37,38 +37,42 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div>
-        <div className="flex justify-center">
-          {/* <Image
-            className="rounded-3xl"
-            src={HomeImg}
-            alt="Picture of the author"
-            width={250}
-            height={300}
-          /> */}
-        </div>
-        <div className="height-canvas not-sr-only relative z-10 flex items-center">
+        <div className="height-canvas not-sr-only relative z-10 grid grid-cols-1 space-y-10 py-4 sm:space-y-5 sm:py-10 xl:grid-cols-5">
           <div
             ref={ref}
-            className="mx-auto mt-[-120px] flex justify-center md:text-4xl"
+            className="col-span-3 mx-auto mt-[-120px] md:text-4xl"
             style={{
               transform: `translateY(${progress * 20}vh)`,
             }}
           >
             <div className="divide-y divide-gray-200 dark:divide-gray-700">
-              <div className="relative pb-12 pt-2 text-center sm:pb-14 sm:pt-3">
+              <div className="relative pb-12 pt-2  sm:pb-14 sm:pt-3">
                 <h1 className="py-3 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14 xl:text-6xl">
-                  Hi, <span className="animate-fade-text">I'm</span> &nbsp;
-                  <span>Nikita</span> <span className="animate-fade-text">Lama</span>
+                  Hey, <span className="animate-fade-text">I'm</span> &nbsp;
+                  <span className="text-red-500">Nikita</span>{' '}
+                  <span className="waving-hand text-5xl">👋🏻</span>
                 </h1>
-                <p className="px-2 text-xl font-light leading-6 text-gray-500 dark:text-gray-400 sm:px-6 xl:px-0">
-                  Full Stack Developer.
+                <p className="mt-1 text-black dark:text-white sm:pr-6 sm:text-lg sm:leading-8">
+                  I am a Full Stack developer with expertise designing websites and mobile apps in
+                  the business. I specialize in Java and have two years of professional expertise.{' '}
+                  <br />
+                  <br />
+                  In addition, I work on Javascript frameworks such as React, Node, and J-query.
+                </p>
+                <p className="mt-4 leading-7 text-gray-500 underline underline-offset-4 sm:pr-6 sm:text-lg">
+                  <Link
+                    href="/about"
+                    className="hover:cursor-pointer hover:text-primary-500 dark:text-gray-500 hover:dark:text-primary-500"
+                  >
+                    <a>Read the rest of my bio &rarr;</a>
+                  </Link>
                 </p>
               </div>
             </div>
           </div>
         </div>
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
-          <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+          <div className="pt-4 pb-8 md:space-y-5">
             <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
               Recent Posts
             </h1>
