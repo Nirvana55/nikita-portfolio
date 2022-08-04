@@ -5,12 +5,12 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
-import Card from '@/components/Card'
 import { renderCanvas } from '../components/renderCanvas'
 import { ScrollContext } from '../components/scrollObserver'
 import { useRef, useContext, useEffect } from 'react'
+import { RoughNotation } from 'react-rough-notation'
 
-const MAX_DISPLAY = 1
+const MAX_DISPLAY = 3
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -37,101 +37,116 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div>
-        <div className="flex justify-center">
-          {/* <Image
-            className="rounded-3xl"
-            src={HomeImg}
-            alt="Picture of the author"
-            width={250}
-            height={300}
-          /> */}
-        </div>
-        <div className="height-canvas not-sr-only relative z-10 flex items-center">
+        <div className="height-canvas not-sr-only z-10 grid grid-cols-1 space-y-10 py-4 sm:space-y-5 sm:py-10 xl:grid-cols-5">
           <div
             ref={ref}
-            className="mx-auto mt-[-120px] flex justify-center md:text-4xl"
+            className="col-span-3 mx-auto mt-[-120px] md:text-4xl"
             style={{
               transform: `translateY(${progress * 20}vh)`,
             }}
           >
-            <div className="divide-y divide-gray-200 dark:divide-gray-700">
-              <div className="relative pb-12 pt-2 text-center sm:pb-14 sm:pt-3">
-                <h1 className="py-3 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14 xl:text-6xl">
-                  Hi, <span className="animate-fade-text">I'm</span> &nbsp;
-                  <span>Nikita</span> <span className="animate-fade-text">Lama</span>
-                </h1>
-                <p className="px-2 text-xl font-light leading-6 text-gray-500 dark:text-gray-400 sm:px-6 xl:px-0">
-                  Full Stack Developer.
-                </p>
-              </div>
-              <div>
-                <div className="flex w-full flex-wrap pb-2">
-                  <Card
-                    title="Articles"
-                    description="A place where I share resources that I have been publishing through out the years."
-                    href={'/blog'}
-                    className="py-4 md:px-4"
-                  />
-                  <Card
-                    title="About"
-                    description="Learn about me, my career and a timeline of my lifetime."
-                    href={'/about'}
-                    className="py-4 md:px-4"
-                  />
-                </div>
-              </div>
+            <div className="relative pb-12 pt-2  sm:pb-14 sm:pt-3">
+              <h1 className="py-3 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14 xl:text-6xl">
+                Hey, <span className="animate-fade-text">I'm</span> &nbsp;
+                <span className="text-red-500">Nikita</span>{' '}
+                <span className="waving-hand text-5xl">👋🏻</span>
+              </h1>
+              <p className="mt-1 text-black dark:text-gray-100 sm:pr-6 sm:text-lg sm:leading-8">
+                I am a Full Stack developer with expertise designing websites and mobile apps in the
+                business. I specialize in &nbsp;
+                <RoughNotation
+                  animate="true"
+                  animationDelay={1000}
+                  animationDuration={1000}
+                  color="#EF4444"
+                  show={true}
+                  className="dark:text-slate-200"
+                  type="box"
+                >
+                  Java
+                </RoughNotation>{' '}
+                and have{' '}
+                <RoughNotation
+                  animate="true"
+                  animationDelay={1000}
+                  animationDuration={1000}
+                  color="#EF4444"
+                  show={true}
+                  className="dark:text-slate-200"
+                  type="box"
+                >
+                  two years of professional
+                </RoughNotation>{' '}
+                expertise. <br />
+                <br />
+                In addition, I work on{' '}
+                <RoughNotation
+                  animate="true"
+                  animationDelay={1000}
+                  animationDuration={1000}
+                  color="#EF4444"
+                  show={true}
+                  className="dark:text-slate-200"
+                  type="box"
+                >
+                  Javascript frameworks{' '}
+                </RoughNotation>{' '}
+                such as React, Node, and J-query.{' '}
+              </p>
+              <p className="mt-6 leading-7 text-gray-500 underline underline-offset-4 sm:pr-6 sm:text-lg">
+                <Link
+                  href="/about"
+                  className="hover:cursor-pointer hover:text-primary-500 dark:text-gray-500 hover:dark:text-primary-500"
+                >
+                  <a>Read the rest of my bio &rarr;</a>
+                </Link>
+              </p>
             </div>
           </div>
         </div>
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
-          <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+          <div className="pb-8 md:space-y-5">
             <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
               Recent Posts
             </h1>
           </div>
-          <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+          <ul className="gap-5 xl:grid xl:grid-cols-3">
             {!posts.length && 'No posts found.'}
             {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
               const { slug, date, title, summary, tags } = frontMatter
               return (
-                <li key={slug} className="py-12">
+                <li key={slug} className="py-10">
                   <article>
-                    <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                      <dl>
-                        <dt className="sr-only">Published on</dt>
-                        <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                          <time dateTime={date}>{formatDate(date)}</time>
-                        </dd>
-                      </dl>
-                      <div className="space-y-5 xl:col-span-3">
-                        <div className="space-y-6">
-                          <div>
-                            <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                              <Link
-                                href={`/blog/${slug}`}
-                                className="text-gray-900 dark:text-gray-100"
-                              >
-                                {title}
-                              </Link>
-                            </h2>
-                            <div className="flex flex-wrap">
-                              {tags.map((tag) => (
-                                <Tag key={tag} text={tag} />
-                              ))}
+                    <div className="group relative">
+                      <div className="group:hover:opacity-100 absolute inset-0.5 bg-gradient-to-r from-red-600 to-pink-600 opacity-75 blur-sm transition duration-200"></div>
+                      <div className="relative rounded-md bg-white px-5 py-5 dark:bg-black">
+                        <div className="space-y-5">
+                          <div className="space-y-6">
+                            <div>
+                              <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                                <Link
+                                  href={`/blog/${slug}`}
+                                  className="text-gray-900 dark:text-gray-100"
+                                >
+                                  {title}
+                                </Link>
+                              </h2>
+                              <div className="flex flex-wrap">
+                                {tags.map((tag) => (
+                                  <Tag key={tag} text={tag} />
+                                ))}
+                              </div>
+                            </div>
+                            <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                              {summary}
                             </div>
                           </div>
-                          <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                            {summary}
-                          </div>
-                        </div>
-                        <div className="text-base font-medium leading-6">
-                          <Link
-                            href={`/blog/${slug}`}
-                            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                            aria-label={`Read "${title}"`}
-                          >
-                            Read more &rarr;
-                          </Link>
+                          <dl>
+                            <dt className="sr-only">Published on</dt>
+                            <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                              <time dateTime={date}>{formatDate(date)}</time>
+                            </dd>
+                          </dl>
                         </div>
                       </div>
                     </div>
