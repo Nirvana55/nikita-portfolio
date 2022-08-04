@@ -1,8 +1,8 @@
 ---
 name: Nikita Lama
 avatar: /static/images/avatar.jpg
-occupation: Programmer
-company: Company Name
+occupation: Full Stack Developer
+company: Amazon
 email: nikitalama168@gmail.com
 twitter: https://twitter.com/Twitter
 linkedin: https://www.linkedin.com/in/nikita-l-4128b1101/

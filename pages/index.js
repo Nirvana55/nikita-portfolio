@@ -9,7 +9,6 @@ import Card from '@/components/Card'
 import { renderCanvas } from '../components/renderCanvas'
 import { ScrollContext } from '../components/scrollObserver'
 import { useRef, useContext, useEffect } from 'react'
-import HomeImg from '../public/static/images/home-image.jpg'
 
 const MAX_DISPLAY = 1
 
