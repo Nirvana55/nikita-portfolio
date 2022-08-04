@@ -8,9 +8,9 @@ import formatDate from '@/lib/utils/formatDate'
 import { renderCanvas } from '../components/renderCanvas'
 import { ScrollContext } from '../components/scrollObserver'
 import { useRef, useContext, useEffect } from 'react'
-import NewsletterForm from '@/components/NewsletterForm'
+import { RoughNotation } from 'react-rough-notation'
 
-const MAX_DISPLAY = 1
+const MAX_DISPLAY = 3
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -54,12 +54,47 @@ export default function Home({ posts }) {
                 </h1>
                 <p className="mt-1 text-black dark:text-white sm:pr-6 sm:text-lg sm:leading-8">
                   I am a Full Stack developer with expertise designing websites and mobile apps in
-                  the business. I specialize in Java and have two years of professional expertise.{' '}
+                  the business. I specialize in &nbsp;
+                  <RoughNotation
+                    animate="true"
+                    animationDelay={1000}
+                    animationDuration={1000}
+                    color="#EF4444"
+                    show={true}
+                    className="dark:text-slate-200"
+                    type="box"
+                  >
+                    Java
+                  </RoughNotation>{' '}
+                  and have{' '}
+                  <RoughNotation
+                    animate="true"
+                    animationDelay={1000}
+                    animationDuration={1000}
+                    color="#EF4444"
+                    show={true}
+                    className="dark:text-slate-200"
+                    type="box"
+                  >
+                    two years of professional
+                  </RoughNotation>{' '}
+                  expertise. <br />
                   <br />
-                  <br />
-                  In addition, I work on Javascript frameworks such as React, Node, and J-query.
+                  In addition, I work on{' '}
+                  <RoughNotation
+                    animate="true"
+                    animationDelay={1000}
+                    animationDuration={1000}
+                    color="#EF4444"
+                    show={true}
+                    className="dark:text-slate-200"
+                    type="box"
+                  >
+                    Javascript frameworks{' '}
+                  </RoughNotation>{' '}
+                  such as React, Node, and J-query.{' '}
                 </p>
-                <p className="mt-4 leading-7 text-gray-500 underline underline-offset-4 sm:pr-6 sm:text-lg">
+                <p className="mt-6 leading-7 text-gray-500 underline underline-offset-4 sm:pr-6 sm:text-lg">
                   <Link
                     href="/about"
                     className="hover:cursor-pointer hover:text-primary-500 dark:text-gray-500 hover:dark:text-primary-500"
@@ -72,54 +107,48 @@ export default function Home({ posts }) {
           </div>
         </div>
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
-          <div className="pt-4 pb-8 md:space-y-5">
+          <div className="pb-8 md:space-y-5">
             <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
               Recent Posts
             </h1>
           </div>
-          <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+          <ul className="gap-5 xl:grid xl:grid-cols-3">
             {!posts.length && 'No posts found.'}
             {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
               const { slug, date, title, summary, tags } = frontMatter
               return (
-                <li key={slug} className="py-12">
+                <li key={slug} className="py-10">
                   <article>
-                    <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                      <dl>
-                        <dt className="sr-only">Published on</dt>
-                        <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                          <time dateTime={date}>{formatDate(date)}</time>
-                        </dd>
-                      </dl>
-                      <div className="space-y-5 xl:col-span-3">
-                        <div className="space-y-6">
-                          <div>
-                            <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                              <Link
-                                href={`/blog/${slug}`}
-                                className="text-gray-900 dark:text-gray-100"
-                              >
-                                {title}
-                              </Link>
-                            </h2>
-                            <div className="flex flex-wrap">
-                              {tags.map((tag) => (
-                                <Tag key={tag} text={tag} />
-                              ))}
+                    <div className="group relative">
+                      <div className="group:hover:opacity-100 absolute inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 opacity-75 blur-sm transition duration-200"></div>
+                      <div className="relative rounded-md bg-white px-5 py-5 dark:bg-black">
+                        <div className="space-y-5">
+                          <div className="space-y-6">
+                            <div>
+                              <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                                <Link
+                                  href={`/blog/${slug}`}
+                                  className="text-gray-900 dark:text-gray-100"
+                                >
+                                  {title}
+                                </Link>
+                              </h2>
+                              <div className="flex flex-wrap">
+                                {tags.map((tag) => (
+                                  <Tag key={tag} text={tag} />
+                                ))}
+                              </div>
+                            </div>
+                            <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                              {summary}
                             </div>
                           </div>
-                          <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                            {summary}
-                          </div>
-                        </div>
-                        <div className="text-base font-medium leading-6">
-                          <Link
-                            href={`/blog/${slug}`}
-                            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                            aria-label={`Read "${title}"`}
-                          >
-                            Read more &rarr;
-                          </Link>
+                          <dl>
+                            <dt className="sr-only">Published on</dt>
+                            <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                              <time dateTime={date}>{formatDate(date)}</time>
+                            </dd>
+                          </dl>
                         </div>
                       </div>
                     </div>
