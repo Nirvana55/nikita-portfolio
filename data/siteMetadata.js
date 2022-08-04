@@ -1,8 +1,8 @@
 const siteMetadata = {
-  title: 'Nikhil Lama',
-  author: 'Nikhil Lama',
-  headerTitle: 'Nikhil Lama',
-  description: 'My personal blog website',
+  title: 'Nikita Lama',
+  author: 'Nikita Lama',
+  headerTitle: 'Nikita Lama',
+  description: 'My portfolio',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
@@ -10,11 +10,11 @@ const siteMetadata = {
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/card-image.jpg',
-  email: 'address@yoursite.com',
+  email: 'nikitalama168@gmail.com',
   twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
+  facebook: 'https://www.facebook.com/nikita.lama.982/',
   youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
+  linkedin: 'https://www.linkedin.com/in/nikita-l-4128b1101/',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the

@@ -59,10 +59,10 @@ export default function Home({ posts }) {
               <div className="relative pb-12 pt-2 text-center sm:pb-14 sm:pt-3">
                 <h1 className="py-3 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14 xl:text-6xl">
                   Hi, <span className="animate-fade-text">I'm</span> &nbsp;
-                  <span>Nikhil</span> <span className="animate-fade-text">Lama</span>
+                  <span>Nikita</span> <span className="animate-fade-text">Lama</span>
                 </h1>
                 <p className="px-2 text-xl font-light leading-6 text-gray-500 dark:text-gray-400 sm:px-6 xl:px-0">
-                  Programmer & Ethical Hacker.
+                  Full Stack Developer.
                 </p>
               </div>
               <div>
