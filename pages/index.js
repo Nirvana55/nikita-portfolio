@@ -64,22 +64,6 @@ export default function Home({ posts }) {
                   Full Stack Developer.
                 </p>
               </div>
-              <div>
-                <div className="flex w-full flex-wrap pb-2">
-                  <Card
-                    title="Articles"
-                    description="A place where I share resources that I have been publishing through out the years."
-                    href={'/blog'}
-                    className="py-4 md:px-4"
-                  />
-                  <Card
-                    title="About"
-                    description="Learn about me, my career and a timeline of my lifetime."
-                    href={'/about'}
-                    className="py-4 md:px-4"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </div>
