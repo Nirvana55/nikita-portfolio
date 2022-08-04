@@ -7,7 +7,7 @@ const siteMetadata = {
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
-  siteLogo: '/static/images/logo.png',
+  siteLogo: '/static/images/siteLogo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/card-image.jpg',
   email: 'nikitalama168@gmail.com',
