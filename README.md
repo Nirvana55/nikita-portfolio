@@ -1,3 +1,2 @@
-# Kul Luitel Portfolio
+# Nikita Lama
 
-Hello, Kul Luitel here.
